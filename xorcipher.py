@@ -13,7 +13,9 @@ def encrypt(key, m):
 	for i in range(len(m)):
 		c = ord(m[i])
 		k = key[i % len(key)]
-		encrypted += str(c ^ k) + " "
+		encrypted += str(c ^ k)
+		if i < len(m) - 1
+			encrypted += " "
 	return encrypted
 
 
@@ -29,8 +31,8 @@ def decrypt(key, c):
 def main():
 		
 	parser = argparse.ArgumentParser()
-	parser.add_argument("--encrypt", nargs=2, metavar=("key", "message"), help="Encrypt a message using XOR cipher")
-	parser.add_argument("--decrypt", nargs=2, metavar=("key", "encrypted"), help="Decrypt an encrypted message using XOR cipher")
+	parser.add_argument("-e", "--encrypt", nargs=2, metavar=("key", "message"), help="Encrypt a message using XOR cipher")
+	parser.add_argument("-d", "--decrypt", nargs=2, metavar=("key", "encrypted"), help="Decrypt an encrypted message using XOR cipher")
 	args = parser.parse_args() 
 
 	if args.encrypt:
