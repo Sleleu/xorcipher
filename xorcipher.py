@@ -14,7 +14,7 @@ def encrypt(key, m):
 		c = ord(m[i])
 		k = key[i % len(key)]
 		encrypted += str(c ^ k)
-		if i < len(m) - 1
+		if i < len(m) - 1:
 			encrypted += " "
 	return encrypted
 
